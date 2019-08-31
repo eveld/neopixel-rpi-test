@@ -18,10 +18,10 @@ cd neopixel-test
 
 Run voor 18 leds per tegel.
 ```
-python 18_leds.py
+sudo python3 18_leds.py
 ```
 
 Run voor 36 leds per tegel.
 ```
-python 36_leds.py
+sudo python3 36_leds.py
 ```
