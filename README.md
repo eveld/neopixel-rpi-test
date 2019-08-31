@@ -1,4 +1,4 @@
-Installeer deze dependencies.
+Installeer deze dependencies. [link](https://learn.adafruit.com/neopixels-on-raspberry-pi/python-usage)
 ```
 sudo apt-get update && sudo apt-get install git
 sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
