@@ -43,7 +43,7 @@ sudo ln -s $(pwd)/led-server /usr/local/bin/led-server
 
 Run de server in een nieuwe terminal.
 ```
-led-server
+sudo led-server
 ```
 
 # Besturen
