@@ -46,6 +46,12 @@ Run de server in een nieuwe terminal.
 sudo led-server
 ```
 
+# Demo
+Run het demo script.
+```
+./demo.sh
+```
+
 # Besturen
 Zet de consul tegel aan.
 ```
