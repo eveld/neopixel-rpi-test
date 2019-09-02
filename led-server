@@ -1,84 +1,27 @@
 #!/usr/bin/python3
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+
 import board
 import neopixel
 
 pixels = neopixel.NeoPixel(board.D18, 150, brightness=0.2, auto_write=False, pixel_order=neopixel.RGB)
-leds = [
-    {
-        "name": "all",
-        "enabled": False,
-        "start": 0,
-        "end": 250,
-        "r": 255,
-        "g": 255,
-        "b": 255
-    },
-    {
-        "name": "consul",
-        "enabled": False,
-        "start": 0,
-        "end": 34,
-        "r": 198,
-        "g": 42,
-        "b": 113
-    },
-    {
-        "name": "vagrant",
-        "enabled": False,
-        "start": 34,
-        "end": 68,
-        "r": 21,
-        "g": 99,
-        "b": 255
-        },
-    {
-        "name": "packer",
-        "enabled": False,
-        "start": 68,
-        "end": 102,
-        "r": 29,
-        "g": 174,
-        "b": 255
-    },
-    {
-        "name": "terraform",
-        "enabled": False,
-        "start": 102,
-        "end": 136,
-        "r": 92,
-        "g": 78,
-        "b": 229
-    },
-    {
-        "name": "vault",
-        "enabled": False,
-        "start": 136,
-        "end": 170,
-        "r": 106,
-        "g": 109,
-        "b": 122
-    },
-    {
-        "name": "nomad",
-        "enabled": False,
-        "start": 170,
-        "end": 204,
-        "r": 37,
-        "g": 186,
-        "b": 129
-    },
-    {
-        "name": "hashicorp",
-        "enabled": False,
-        "start": 204,
-        "end": 250,
-        "r": 255,
-        "g": 255,
-        "b": 255
-    }
-]
+
+def enable_led(led):
+    # Turn on all the leds for the tile.
+    for index in range(led["start", led["end"]]):
+        pixels[index] = (led["r"], led["g"], led["b"])
+    
+    # Send the new color.
+    pixels.show()
+
+def disable_led(name):
+    # Turn off all the leds for the tile.
+    for index in range(led["start", led["end"]]):
+        pixels[index] = (0, 0, 0)
+    
+    # Send the new color.
+    pixels.show()
 
 class Led(Resource):
     def get(self, name):
@@ -106,8 +49,6 @@ class Led(Resource):
                 led["enabled"] = False
                 return led, 200
         return "led not found", 404
-
-
 
 app = Flask(__name__)
 api = Api(app)
