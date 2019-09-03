@@ -81,22 +81,6 @@ leds = [
     }
 ]
 
-def enable_led(led):
-    # Turn on all the leds for the tile.
-    for index in range(led["start", led["end"]]):
-        pixels[index] = (led["r"], led["g"], led["b"])
-    
-    # Send the new color.
-    pixels.show()
-
-def disable_led(name):
-    # Turn off all the leds for the tile.
-    for index in range(led["start", led["end"]]):
-        pixels[index] = (0, 0, 0)
-    
-    # Send the new color.
-    pixels.show()
-
 class Led(Resource):
     def get(self, name):
         for led in leds:
@@ -107,7 +91,13 @@ class Led(Resource):
     def post(self, name):
         for led in leds:
             if led["name"] == name:
-                enable_led(led)
+                # Turn on all the leds for the tile.
+                for index in range(led["start"], led["end"]):
+                    pixels[index] = (led["r"], led["g"], led["b"])
+                    # print(led["r"], led["g"], led["b"])
+                
+                # Send the new color.
+                pixels.show()
 
                 # Return new status.
                 led["enabled"] = True
@@ -117,7 +107,13 @@ class Led(Resource):
     def delete(self, name):
         for led in leds:
             if led["name"] == name:
-                disable_led(led)
+                 # Turn off all the leds for the tile.
+                for index in range(led["start"], led["end"]):
+                    pixels[index] = (0, 0, 0)
+                    # print(0, 0, 0)
+                
+                # Send the new color.
+                pixels.show()
 
                 # Return new status.
                 led["enabled"] = False
