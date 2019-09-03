@@ -128,22 +128,22 @@ leds = [
         "b": 122
     },
     {
-        "name": "nomad",
+        "name": "consul",
         "enabled": False,
         "start": 136,
         "end": 170,
-        "r": 0,#37,
-        "g": 255,#186,
-        "b": 0#129
+        "r": 37,
+        "g": 186,
+        "b": 129
     },
     {
-        "name": "consul",
+        "name": "nomad",
         "enabled": False,
         "start": 170,
         "end": 204,
-        "r": 255,#198,
-        "g": 0,#42,
-        "b": 0#113
+        "r": 198,
+        "g": 42,
+        "b": 113
     },
     {
         "name": "hashicorp",
