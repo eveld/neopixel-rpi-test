@@ -5,7 +5,82 @@ from flask_restful import Api, Resource, reqparse
 import board
 import neopixel
 
-pixels = neopixel.NeoPixel(board.D18, 250, brightness=0.2, auto_write=False, pixel_order=neopixel.RGB)
+pixels = neopixel.NeoPixel(board.D18, 250, brightness=0.5, auto_write=False, pixel_order=neopixel.RGB)
+# leds = [
+#     {
+#         "name": "all",
+#         "enabled": False,
+#         "start": 0,
+#         "end": 250,
+#         "r": 255,
+#         "g": 255,
+#         "b": 255
+#     },
+#     {
+#         "name": "consul",
+#         "enabled": False,
+#         "start": 0,
+#         "end": 34,
+#         "r": 198,
+#         "g": 42,
+#         "b": 113
+#     },
+#     {
+#         "name": "vagrant",
+#         "enabled": False,
+#         "start": 34,
+#         "end": 68,
+#         "r": 21,
+#         "g": 99,
+#         "b": 255
+#         },
+#     {
+#         "name": "packer",
+#         "enabled": False,
+#         "start": 68,
+#         "end": 102,
+#         "r": 29,
+#         "g": 174,
+#         "b": 255
+#     },
+#     {
+#         "name": "terraform",
+#         "enabled": False,
+#         "start": 102,
+#         "end": 136,
+#         "r": 92,
+#         "g": 78,
+#         "b": 229
+#     },
+#     {
+#         "name": "vault",
+#         "enabled": False,
+#         "start": 136,
+#         "end": 170,
+#         "r": 106,
+#         "g": 109,
+#         "b": 122
+#     },
+#     {
+#         "name": "nomad",
+#         "enabled": False,
+#         "start": 170,
+#         "end": 204,
+#         "r": 37,
+#         "g": 186,
+#         "b": 129
+#     },
+#     {
+#         "name": "hashicorp",
+#         "enabled": False,
+#         "start": 204,
+#         "end": 250,
+#         "r": 255,
+#         "g": 255,
+#         "b": 255
+#     }
+# ]
+
 leds = [
     {
         "name": "all",
@@ -26,22 +101,22 @@ leds = [
         "b": 113
     },
     {
-        "name": "vagrant",
+        "name": "nomad",
         "enabled": False,
         "start": 34,
         "end": 68,
-        "r": 21,
-        "g": 99,
-        "b": 255
+        "r": 37,
+        "g": 186,
+        "b": 129
         },
     {
-        "name": "packer",
+        "name": "vault",
         "enabled": False,
         "start": 68,
         "end": 102,
-        "r": 29,
-        "g": 174,
-        "b": 255
+        "r": 106,
+        "g": 109,
+        "b": 122
     },
     {
         "name": "terraform",
@@ -53,22 +128,22 @@ leds = [
         "b": 229
     },
     {
-        "name": "vault",
+        "name": "packer",
         "enabled": False,
         "start": 136,
         "end": 170,
-        "r": 106,
-        "g": 109,
-        "b": 122
+        "r": 29,
+        "g": 174,
+        "b": 255
     },
     {
-        "name": "nomad",
+        "name": "vagrant",
         "enabled": False,
         "start": 170,
         "end": 204,
-        "r": 37,
-        "g": 186,
-        "b": 129
+        "r": 21,
+        "g": 99,
+        "b": 255
     },
     {
         "name": "hashicorp",

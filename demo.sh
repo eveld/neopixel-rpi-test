@@ -1,5 +1,5 @@
 #!/bin/bash
-tiles=("consul" "vagrant" "packer" "terraform" "vault" "nomad")
+tiles=("consul" "nomad" "vault" "terraform" "packer" "vagrant")
 
 # Turn on hashicorp tile.
 echo "turn on hashicorp"
