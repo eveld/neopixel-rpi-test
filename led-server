@@ -96,17 +96,17 @@ leds = [
         "enabled": False,
         "start": 0,
         "end": 34,
-        "r": 21,
-        "g": 99,
-        "b": 255
+        "r": 0,
+        "g": 84,
+        "b": 251
     },
     {
         "name": "packer",
         "enabled": False,
         "start": 34,
         "end": 68,
-        "r": 29,
-        "g": 174,
+        "r": 4,
+        "g": 165,
         "b": 255
         },
     {
@@ -141,9 +141,9 @@ leds = [
         "enabled": False,
         "start": 170,
         "end": 204,
-        "r": 37,
-        "g": 186,
-        "b": 129
+        "r": 198,
+        "g": 42,
+        "b": 113
     },
     {
         "name": "hashicorp",
