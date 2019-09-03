@@ -128,7 +128,7 @@ leds = [
         "b": 122
     },
     {
-        "name": "consul",
+        "name": "nomad",
         "enabled": False,
         "start": 136,
         "end": 170,
@@ -137,7 +137,7 @@ leds = [
         "b": 129
     },
     {
-        "name": "nomad",
+        "name": "consul",
         "enabled": False,
         "start": 170,
         "end": 204,
